@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+	<link rel='stylesheet' type='text/css' href='style.css' />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+	<head>
+		<title></title>
+		<!--[if IE]><script language="javascript" type="text/javascript" src="flot/excanvas.min.js"></script><![endif]-->
+		<script language="javascript" type="text/javascript" src="flot/jquery.js"></script>
+		<script language="javascript" type="text/javascript" src="flot/jquery.flot.js"></script>
+		<script>
+		
+			//just plot params, nothing special
+			var plot_conf = {
+					series: {
+					lines: { 
+					show: true,
+					lineWidth: 2 
+					}
+				}
+			};
+		
+			function showFileInput() {
+				var fileInput = document.getElementById("fileInput");
+				fileInput.click();
+			}
+		
+			//get local file and parse it
+			function processFiles(files){
+			
+				var file = files[0];
+				var reader = new FileReader();
+				
+				//Starts reading file
+				reader.readAsText(file);
+				
+				//Calls when the file loads
+				reader.onloadend = function (e) {
+					
+					var text = reader.result;
+	
+					var dataArray = [];
+											
+					var temp = text.split(/\n/);
+					
+					//shitcode
+					temp.forEach(function(item, i, arr) {
+						dataArray.push(item.split(/\s+/));
+					});
+					
+					console.log(dataArray);	
+					
+					$.plot($("#placeholder"), [{data:dataArray}], plot_conf);
+					//}
+
+				};//eof onloadend
+				
+			}
+			
+		
+		</script>
+	</head>
+	<body>
+	<div id='header'>
+		<h1>Post-plot</h1>
+	</div>
+	
+	<div id='content'>	
+		<div id='instruction'></div>
+		
+		<input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
+		
+		<!--<div id='inputbutton'><button onclick="showFileInput()" >Добавить файл</button></div>-->
+		
+		<div id="placeholder" style="width:890px;height:590px;margin:auto;position:relative;"></div>
+		<script>
+				//////TEST!!!
+				var date = [[5,6],[3,4],[1,2]];
+				$.plot($("#placeholder"), [{data:date}], plot_conf);
+		
+		</script>
+		
+	</div>
+	<div id='footer' >
+		</br>
+		<div>
+			О, тут тоже писать можно, забавно.
+		</div>
+		</br>
+	</div>
+	</body>
+</html>
