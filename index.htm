@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-	<!--<link rel='stylesheet' type='text/css' href='style.css' />-->
+	<link rel='stylesheet' type='text/css' href='style.css' />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 	<head>
@@ -81,18 +81,38 @@
 	<body>
 	<div class="container-fluid" id="header">
 		<div class="row">
-			<h1>Post-plot</h1>
 			<div class="navbar navbar-inverse">
+				<div class="container">
+				
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+							<span class="sr-only">Open navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">POST_PLOT</a>
+					
+					</div>
+					<div class="collapse navbar-collapse" id="responsive-menu">
+					
+						<ul class="nav navbar-nav">
+							<li><a href="#">Test</a></li>
+						</ul>
+					
+					</div>
+					
+				</div>
 			</div>
 		</div>
 	</div>
 	
-	<div class="container-fluid" id='content'>	
+	<div class="container" id='content'>	
 		
 		<div id='instruction'></div>
-		
+		<div class="container">
 		<input id="fileInput" type="file" size="50" onchange="processFiles(this.files)">
-		
+		</div>
 		<!--<div id='inputbutton'><button onclick="showFileInput()" >Добавить файл</button></div>-->
 		
 		<div id="placeholder" style="width:890px;height:590px;margin:auto;position:relative;"></div>

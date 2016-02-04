@@ -1,49 +1,14 @@
-* {	padding: 0; margin: 0; vertical-align: top; }
-
-a {	color: #069; }
-a:hover { color: #28b; }
-
-body {
-	background: gray url("back.jpg");
-	padding: 19px;
-}
-#header {
-		position: relative;
-		width: 900px;
-		height: 64px;
-		margin: auto;
-		background-color:#FFFFFF;
-	}
-#footer {
-		text-align: center;
-		position: relative;
-		width: 900px;
-		margin: auto;
-		background-color:#FFFFFF;
-	}
-	
-#content {
-	text-align: center;
-	width: 900px;
-	position: relative;
-	margin: auto;
-	border: 1px dashed black;
-	background-color:#FFFFFF;
-}
-	
 #instruction {
-
+	position: relative;
 	padding: 10px;
 	
 }
 
 #fileInput {
-	border: 1px inset gray;
-	padding: 10px;
+	position: relative;
 }
 
 #inputbutton {
-
+	position: relative;
 	text-align: center;
-
 }
